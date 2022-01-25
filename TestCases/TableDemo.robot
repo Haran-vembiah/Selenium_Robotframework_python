@@ -22,7 +22,7 @@ TableValidations
     table cell should contain    xpath://table[@name='BookTable']   5   2   Mu
     table header should contain    xpath://table[@name='BookTable']     Bo
     table should contain    xpath://table[@name='BookTable']    B
-    tab
+
 
 
     close browser
