@@ -15,9 +15,11 @@ Close Browsers
 
 Open Login Page
     go to  ${LOGIN URL}
+
 Input username
     [Arguments]     ${username}
     input text  id:Email    ${username}
+
 Input pwd
     [Arguments]  ${password}
     input text  id:Password     ${password}

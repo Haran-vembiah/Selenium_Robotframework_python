@@ -1,100 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.7.4 on win32)" generated="20220125 21:17:14.114" rpa="false" schemaversion="2">
-<suite id="s1" name="DDT1" source="D:\Skill_development\Robotframework_sample\TestCases\DDT1.robot">
+<robot generator="Robot 4.1.3 (Python 3.7.4 on win32)" generated="20220127 16:06:59.940" rpa="false" schemaversion="2">
+<suite id="s1" name="DDT2 Excel" source="D:\Skill_development\Robotframework_sample\TestCases\DDT2_Excel.robot">
 <kw name="Open my Browser" library="login_resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220125 21:17:14.374" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com'.</msg>
-<status status="PASS" starttime="20220125 21:17:14.374" endtime="20220125 21:17:42.714"/>
+<msg timestamp="20220127 16:07:01.120" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com'.</msg>
+<msg timestamp="20220127 16:07:01.128" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20220127 16:07:01.131" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</msg>
+<status status="FAIL" starttime="20220127 16:07:01.120" endtime="20220127 16:07:01.131"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220125 21:17:42.714" endtime="20220125 21:17:42.849"/>
+<status status="NOT RUN" starttime="20220127 16:07:01.131" endtime="20220127 16:07:01.131"/>
 </kw>
-<status status="PASS" starttime="20220125 21:17:14.374" endtime="20220125 21:17:42.849"/>
+<status status="FAIL" starttime="20220127 16:07:01.120" endtime="20220127 16:07:01.131"/>
 </kw>
-<test id="s1-t1" name="Right user right passs">
-<kw name="Valid Login">
-<arg>admin@yourstore.com</arg>
-<arg>admin</arg>
-<doc>This is the documentation part of the keyword Valid login</doc>
-<kw name="Input username" library="login_resources">
-<arg>${username}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Email</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220125 21:17:42.859" level="INFO">Typing text 'admin@yourstore.com' into text field 'id:Email'.</msg>
-<status status="PASS" starttime="20220125 21:17:42.849" endtime="20220125 21:17:43.072"/>
-</kw>
-<status status="PASS" starttime="20220125 21:17:42.849" endtime="20220125 21:17:43.073"/>
-</kw>
-<kw name="Input pwd" library="login_resources">
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220125 21:17:43.074" level="INFO">Typing text 'admin' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20220125 21:17:43.074" endtime="20220125 21:17:43.185"/>
-</kw>
-<status status="PASS" starttime="20220125 21:17:43.074" endtime="20220125 21:17:43.185"/>
-</kw>
-<kw name="click login button" library="login_resources">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://button[@type='submit']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220125 21:17:43.187" level="INFO">Clicking element 'xpath://button[@type='submit']'.</msg>
-<status status="PASS" starttime="20220125 21:17:43.187" endtime="20220125 21:17:53.297"/>
-</kw>
-<status status="PASS" starttime="20220125 21:17:43.185" endtime="20220125 21:17:53.297"/>
-</kw>
-<kw name="Dashboard page should be visible" library="login_resources">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Dashboard</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220125 21:17:53.332" level="INFO">Current page contains text 'Dashboard'.</msg>
-<status status="PASS" starttime="20220125 21:17:53.298" endtime="20220125 21:17:53.332"/>
-</kw>
-<status status="PASS" starttime="20220125 21:17:53.298" endtime="20220125 21:17:53.332"/>
-</kw>
-<kw name="click logout link" library="login_resources">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>xpath://a[contains(text(),'Logout')]</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220125 21:17:53.334" endtime="20220125 21:17:53.348"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>Logout</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20220125 21:17:53.349" level="INFO">Clicking link 'Logout'.</msg>
-<status status="PASS" starttime="20220125 21:17:53.349" endtime="20220125 21:17:55.210"/>
-</kw>
-<status status="PASS" starttime="20220125 21:17:53.332" endtime="20220125 21:17:55.210"/>
-</kw>
-<status status="PASS" starttime="20220125 21:17:42.849" endtime="20220125 21:17:55.211"/>
-</kw>
-<status status="PASS" starttime="20220125 21:17:42.849" endtime="20220125 21:17:55.211"/>
+<test id="s1-t1" name="LoginTestwithExcel using admin@yourstore.com  and adm">
+<status status="FAIL" starttime="20220127 16:07:01.131" endtime="20220127 16:07:01.133">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t2" name="LoginTestwithExcel using adm@yourstore.com and admin">
+<status status="FAIL" starttime="20220127 16:07:01.136" endtime="20220127 16:07:01.138">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t3" name="LoginTestwithExcel using adm123@yourstore.com and adm">
+<status status="FAIL" starttime="20220127 16:07:01.139" endtime="20220127 16:07:01.140">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
 </test>
 <kw name="Close Browsers" library="login_resources" type="TEARDOWN">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20220125 21:17:55.215" endtime="20220125 21:17:57.394"/>
+<status status="PASS" starttime="20220127 16:07:01.142" endtime="20220127 16:07:01.142"/>
 </kw>
-<status status="PASS" starttime="20220125 21:17:55.214" endtime="20220125 21:17:57.395"/>
+<status status="PASS" starttime="20220127 16:07:01.142" endtime="20220127 16:07:01.143"/>
 </kw>
-<status status="PASS" starttime="20220125 21:17:14.118" endtime="20220125 21:17:57.395"/>
+<status status="FAIL" starttime="20220127 16:06:59.945" endtime="20220127 16:07:01.143">Suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="DDT1">DDT1</stat>
+<stat pass="0" fail="3" skip="0" id="s1" name="DDT2 Excel">DDT2 Excel</stat>
 </suite>
 </statistics>
 <errors>
