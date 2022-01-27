@@ -1,5 +1,4 @@
 *** Settings ***
-Library      SelniumLibrary
 Resource    ../Resources/login_resources.robot
 Library     DataDriver  ../TestData/LoginData.csv
 

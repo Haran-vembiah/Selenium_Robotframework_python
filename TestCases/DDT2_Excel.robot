@@ -1,12 +1,15 @@
 *** Settings ***
-Library     SeleniumLibrary
+Library    SeleniumLibrary
 Resource    ../Resources/login_resources.robot
-Library     DataDriver  ../TestData/LoginData.xlsx  sheet_name=Sheet1
-Suite Setup  Open my Browser
-Suite Teardown  Close Browsers
-Test Template  Invalid login
+Library     DataDriver  ../TestData/LoginData.xls   sheet_name=Sheet1
+#
+Suite Setup    Open my Browser
+Suite Teardown    Close Browsers
+Test Template    Invalid login
+
 
 *** Test Cases ***
+
 LoginTestwithExcel using ${username} and ${password}
 
 
@@ -17,3 +20,4 @@ Invalid login
     Input pwd  ${password}
     click login button
     Error message should be visible
+

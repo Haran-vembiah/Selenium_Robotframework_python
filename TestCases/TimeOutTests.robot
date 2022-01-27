@@ -9,6 +9,7 @@ RegTest
     ${time}=    get selenium timeout
     log to console   ${time}
 
+
     set selenium timeout  10 seconds
     wait until page contains  Register      # 5 secs
     select radio button  Gender     M
