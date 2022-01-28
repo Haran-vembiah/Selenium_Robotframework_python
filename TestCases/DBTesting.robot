@@ -20,9 +20,9 @@ ${DBUser}         postgres
 #    log to console  ${output}
 #    should be equal as strings  ${output}   None
 
-#Inserting Data in person Table
-#    Single Record
-#    ${output}=   Execute SQL String  Insert into sample_db.person values(101,"John","canady");
+Inserting Data in person Table
+    Single Record
+    ${output}=   Execute SQL String  Insert into sample_db.person values(101,"John","canady");
 
 #Multiple records
 #    ${output}=   Execute SQL Script  ./TestData/mydb_person_insertData.sql
@@ -31,44 +31,48 @@ ${DBUser}         postgres
 
 
 #======== Uncomment from here ==============
-#Check David record present in Person Table
-#    check if exists in database  select id from mydb.person where first_name="David";
+Check David record present in Person Table
+    check if exists in database  select id from sample_db.person where first_name='David';
 #
-#Check Jio record Not present in Person Table
-#    check if not exists in database  select id from mydb.person where first_name="Jio";
+Check Jio record Not present in Person Table
+    check if not exists in database  select id from sample_db.person where first_name='Jio';
 #
-#Check Person Table exists in mydb database
+#Check Person Table exists in sample_db database
 #    table must exist  person
 #
-#Verify Row Count is Zero
-#    row count is 0  SELECT * FROM mydb.person WHERE first_name = 'xyz';
+Verify Row Count is Zero
+    row count is 0  SELECT * FROM sample_db.person WHERE first_name = 'xyz';
 #
-#Verify Row Count is Equal to Some Value
-#   row count is equal to x  SELECT * FROM mydb.person WHERE first_name = 'David';   1
+Verify Row Count is Equal to Some Value
+   row count is equal to x  SELECT * FROM sample_db.person WHERE first_name = 'David';   1
 #
-#Verify Row Count is Greater than Some Value
-#    row count is greater than x  SELECT * FROM mydb.person WHERE first_name = 'David';      0
+Verify Row Count is Greater than Some Value
+    row count is greater than x  SELECT * FROM sample_db.person WHERE first_name = 'David';      0
 #
-#Verify Row Count is less than Some Value
-#    row count is less than x  SELECT * FROM mydb.person WHERE first_name = 'David';     5
+Verify Row Count is less than Some Value
+    row count is less than x  SELECT * FROM sample_db.person WHERE first_name = 'David';     5
 #
-#Update record in person table
-#     ${output}=   Execute SQL String  Update mydb.person set first_name="Jio" where id=104;
-#     log to console  ${output}
-#     should be equal as strings     ${output}       None
+Update record in person table
+     ${output}=   Execute SQL String  Update sample_db.person set first_name='Jio' where id=104;
+     log to console  ${output}
+     should be equal as strings     ${output}       None
 #
-#Retrieve Records from Person Table
-#       @{queryResults}=     query       Select * from mydb.person;
-#       log to console  many @{queryResults}
+Retrieve Records from Person Table
+       @{queryResults}=     query       Select * from sample_db.person;
+       log to console  many @{queryResults}
 
 Retrieve Records from newtable Table
        @{queryResults}=     query       select * from sample_db.newtable;
        log to console  many @{queryResults}
+
+Retrieve Record of Haran from newtable Table
+       @{queryResults}=     query       select * from sample_db.newtable where sno='101';
+       log to console   @{queryResults}
 
 Retrieve Records from person Table
        @{queryResults}=     query       select * from sample_db.person;
        log to console  many @{queryResults}
 
 #Delete Records from person table
-#     ${output}=   Execute SQL String     Delete from mydb.person;
+#     ${output}=   Execute SQL String     Delete from sample_db.person;
 #    should be equal as strings  ${output}    None
