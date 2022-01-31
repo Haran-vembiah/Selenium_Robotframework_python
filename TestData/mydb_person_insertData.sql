@@ -3,5 +3,6 @@ INSERT INTO sample_db.person (id, first_name, last_name) values(102,'David','Can
 INSERT INTO sample_db.person (id, first_name, last_name) values(103,'Smith','Canady');
 INSERT INTO sample_db.person (id, first_name, last_name) values(104,'Marry','Canady');
 INSERT INTO sample_db.person (id, first_name, last_name) values(105,'Tye','Canady');
-INSERT INTO sample_db.person (id, first_name, last_name) values(106,'Mike','Canady');
-INSERT INTO sample_db.person (id, first_name, last_name) values(107,'Hendry','Canady');
+
+
+select * from sample_db.newtable

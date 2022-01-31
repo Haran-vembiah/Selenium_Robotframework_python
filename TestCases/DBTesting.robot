@@ -14,15 +14,16 @@ ${DBPass}         54321
 ${DBPort}         5432
 ${DBUser}         postgres
 
-*** Test Cases ***
-#Create person table
-#    ${output}=   Execute SQL String  Create table sample_db.person(id integer,first_name varchar(20),last_name varchar(20));
-#    log to console  ${output}
-#    should be equal as strings  ${output}   None
 
-Inserting Data in person Table
-    Single Record
-    ${output}=   Execute SQL String  Insert into sample_db.person values(101,"John","canady");
+*** Test Cases ***
+Create person table
+    ${output}=   Execute SQL String  Create table sample_db.person1(id integer,first_name varchar(20),last_name varchar(20));
+    log to console  ${output}
+    should be equal as strings  ${output}   None
+
+#Inserting Data in person Table
+#    Single Record
+#    ${output}=   Execute SQL String  Insert into sample_db.person values(101,"John","canady");
 
 #Multiple records
 #    ${output}=   Execute SQL Script  ./TestData/mydb_person_insertData.sql
@@ -37,11 +38,11 @@ Check David record present in Person Table
 Check Jio record Not present in Person Table
     check if not exists in database  select id from sample_db.person where first_name='Jio';
 #
-#Check Person Table exists in sample_db database
-#    table must exist  person
+Check Person Table exists in sample_db database
+    table must exist  person
 #
 Verify Row Count is Zero
-    row count is 0  SELECT * FROM sample_db.person WHERE first_name = 'xyz';
+    row count is 0  SELECT * FROM sample_db.person WHERE first_name = 'David';
 #
 Verify Row Count is Equal to Some Value
    row count is equal to x  SELECT * FROM sample_db.person WHERE first_name = 'David';   1
@@ -66,7 +67,7 @@ Retrieve Records from newtable Table
        log to console  many @{queryResults}
 
 Retrieve Record of Haran from newtable Table
-       @{queryResults}=     query       select * from sample_db.newtable where sno='101';
+       @{queryResults}=     query       select *  from sample_db.newtable where sno='101';
        log to console   @{queryResults}
 
 Retrieve Records from person Table
