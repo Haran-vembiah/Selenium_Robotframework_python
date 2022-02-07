@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 
 *** Test Cases ***
 RegTest
+    # Default speed of selenium is
     ${spead}=   get selenium speed
     log to console  ${spead}
     open browser  http://demowebshop.tricentis.com/register     chrome
