@@ -16,4 +16,3 @@ LginTest
     click signin
     verify successful login
     close my browsers
-    close my browsers
