@@ -1,0 +1,31 @@
+******* How to Run Test Suites  *******
+
+Appraoch1) Speficy Folder
+----------------
+cd C:\Users\admin\PycharmProjects\Automation\
+robot TestCases\
+
+
+Appraoch2) Using Regular Expression
+--------------------
+cd C:\Users\admin\PycharmProjects\Automation\
+robot TestCases\*.robot
+
+
+*******  How to Run Tests Parallelly using robotframework-pabot  *******
+
+
+Pre-Req: Install Below package in cmd & PyCharm
+
+CLI:
+pip install -U robotframework-pabot
+
+
+cd C:\Users\admin\PycharmProjects\Automation\
+pabot --processes 2 TestCases\*.robot
+
+
+*******  How to Save Results in Results Folder  *******
+
+cd C:\Users\admin\PycharmProjects\Automation\
+pabot --processes 2 --outputdir Results TestCases\*.robot

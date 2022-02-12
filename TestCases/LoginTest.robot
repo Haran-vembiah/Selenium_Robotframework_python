@@ -4,7 +4,7 @@ Resource    ../Resources/LoginKeywords.robot
 
 *** Variables ***
 ${url}  https://admin-demo.nopcommerce.com
-${browser}  chrome
+${browser}  headlessfirefox
 ${username}     admin@yourstore.com
 ${password}     admin
 
